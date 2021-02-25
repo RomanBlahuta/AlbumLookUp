@@ -1,5 +1,7 @@
-<a [routerLink]="['/genres', genreRoute]">
-<div class="GenreCard" [ngStyle]="{'background-color': color}">
-  <span>{{genre}}</span>
+<div>
+  <a [routerLink]="['/genres', genreRoute]" class="GenreCard__link">
+    <div class="GenreCard__card" [ngStyle]="{'background-color': color}">
+      <span>{{genre}}</span>
+    </div>
+  </a>
 </div>
-</a>
