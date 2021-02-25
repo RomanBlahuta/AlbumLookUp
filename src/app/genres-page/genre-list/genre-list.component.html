@@ -1,0 +1,4 @@
+<div class="GenresList">
+  <app-genre-card *ngFor="let genre of genres" [genre]="genre.name" [color]="genre.color" [genreRoute]="genre.apiName">
+  </app-genre-card>
+</div>
