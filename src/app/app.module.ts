@@ -21,6 +21,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatIconModule} from '@angular/material/icon';
 import {HttpClientModule} from '@angular/common/http';
 import {GetTopAlbumsService} from './shared/services/get-top-albums/get-top-albums.service';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {GetTopAlbumsService} from './shared/services/get-top-albums/get-top-albu
     MatButtonModule,
     MatBadgeModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [GetTopAlbumsService],
   bootstrap: [AppComponent]

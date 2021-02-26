@@ -1,5 +1,5 @@
 <div class="Header">
   <button mat-button routerLink="/genres" class="Header__backButton">Back</button>
-  <input type="text" class="Header__albumInput" />
+  <input type="text" class="Header__albumInput" [formControl]="albumNameControl"/>
   <mat-icon class="Header__liked" [matBadge]="likedCount" matBadgeColor="primary">favorite</mat-icon>
 </div>

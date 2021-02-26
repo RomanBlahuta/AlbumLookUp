@@ -1,6 +1,6 @@
 <div class="AlbumList">
   <app-album-card
-    (toggleAlbumEvent)="onToggleAlbum()"
+    (toggleAlbumEvent)="onToggleAlbum($event)"
     *ngFor="let album of albumList"
     [albumData]="album">
   </app-album-card>
