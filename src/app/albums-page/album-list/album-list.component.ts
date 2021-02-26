@@ -1,4 +1,4 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit, Output, EventEmitter} from '@angular/core';
 import {Observable, Subscription} from 'rxjs';
 import {Album, TopAlbumsResponse} from '../../../util/interfaces';
 
@@ -10,6 +10,7 @@ import {Album, TopAlbumsResponse} from '../../../util/interfaces';
 export class AlbumListComponent implements OnInit, OnDestroy {
 
   @Input() albums: Observable<TopAlbumsResponse> | undefined;
+  @Output() likedNumberChangeEvent = new EventEmitter<Album>();
   albumList: Album[] = [];
   albumsSubscription: Subscription | undefined;
 
@@ -25,4 +26,7 @@ export class AlbumListComponent implements OnInit, OnDestroy {
     this.albumsSubscription?.unsubscribe();
   }
 
+  onToggleAlbum(albumData: Album): void {
+    this.likedNumberChangeEvent.emit(albumData);
+  }
 }

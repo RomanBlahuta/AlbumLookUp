@@ -1,2 +1,2 @@
-<app-header></app-header>
-<app-album-list [albums]="albums"></app-album-list>
+<app-header [likedCount]="likedCount"></app-header>
+<app-album-list [albums]="albums" (likedNumberChangeEvent)="onLikedNumberChange()"></app-album-list>

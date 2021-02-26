@@ -1,5 +1,6 @@
 <div class="AlbumCard" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
   <div *ngIf="!mouseOnCard" class="AlbumCard__default" [ngStyle]="{'background-image': 'url(' + albumData.image[3]['#text'] + ')'}"></div>
+
   <div class="AlbumCard__mouseOver" *ngIf="mouseOnCard">
     <p class="AlbumCard__albumName">{{albumData.name}}</p>
     <p class="AlbumCard__artist">{{albumData.artist.name}}</p>

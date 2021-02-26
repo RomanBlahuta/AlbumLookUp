@@ -1,8 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 import {GetTopAlbumsService} from '../shared/services/get-top-albums/get-top-albums.service';
 import {Observable, Subscription} from 'rxjs';
 import {ActivatedRoute, Params} from '@angular/router';
-import {TopAlbumsResponse} from '../../util/interfaces';
+import {Album, TopAlbumsResponse} from '../../util/interfaces';
 
 @Component({
   selector: 'app-albums-page',
@@ -14,6 +14,7 @@ export class AlbumsPageComponent implements OnInit, OnDestroy {
   albums: Observable<TopAlbumsResponse> | undefined;
   currentGenre = '';
   paramsSubscription: Subscription | undefined;
+  likedCount = 0;
 
   constructor(private albumsService: GetTopAlbumsService, private route: ActivatedRoute) { }
 
@@ -29,4 +30,7 @@ export class AlbumsPageComponent implements OnInit, OnDestroy {
     this.paramsSubscription?.unsubscribe();
   }
 
+  onLikedNumberChange(): void {
+    this.likedCount = Object.keys(localStorage).length;
+  }
 }

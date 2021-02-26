@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChanges} from '@angular/core';
 import {Album} from '../../../util/interfaces';
 
 @Component({
@@ -6,9 +6,10 @@ import {Album} from '../../../util/interfaces';
   templateUrl: './album-card.component.html',
   styleUrls: ['./album-card.component.scss']
 })
-export class AlbumCardComponent implements OnInit {
+export class AlbumCardComponent implements OnInit, OnChanges {
 
   @Input() albumData!: Album;
+  @Output() toggleAlbumEvent = new EventEmitter<Album>();
 
   mouseOnCard = false;
   liked = false;
@@ -17,6 +18,7 @@ export class AlbumCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.liked = localStorage.getItem(this.albumData.name) !== null;
   }
 
   onMouseEnter(): void {
@@ -30,6 +32,18 @@ export class AlbumCardComponent implements OnInit {
   onLiked(): void {
     this.liked = !this.liked;
     this.heartIcon = this.liked ? 'favorite' : 'favorite_border';
+
+    if (this.liked) {
+      localStorage.setItem(this.albumData.name, 'liked');
+    } else {
+      localStorage.removeItem(this.albumData.name);
+    }
+
+    this.toggleAlbumEvent.emit(this.albumData);
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    this.liked = localStorage.getItem(this.albumData.name) !== null;
+    this.heartIcon = this.liked ? 'favorite' : 'favorite_border';
+  }
 }
