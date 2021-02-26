@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Album} from '../../../util/interfaces';
 
 @Component({
   selector: 'app-album-card',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlbumCardComponent implements OnInit {
 
+  @Input() albumData!: Album;
+
+  mouseOnCard = false;
+  liked = false;
+  heartIcon = this.liked ? 'favorite' : 'favorite_border';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onMouseEnter(): void {
+    this.mouseOnCard = true;
+  }
+
+  onMouseLeave(): void {
+    this.mouseOnCard = false;
+  }
+
+  onLiked(): void {
+    this.liked = !this.liked;
+    this.heartIcon = this.liked ? 'favorite' : 'favorite_border';
   }
 
 }

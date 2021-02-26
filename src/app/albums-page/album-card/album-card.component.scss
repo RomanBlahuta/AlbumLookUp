@@ -1,0 +1,52 @@
+.AlbumCard {
+  height: 325px;
+  width: 325px;
+  background-color: #212020;
+  margin-right: 28px;
+  margin-bottom: 28px;
+  border-radius: 12px;
+  text-align: center;
+  line-height: 28px;
+
+  &__mouseOver {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    height: 325px;
+    width: 325px;
+  }
+
+  &__albumName {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 28px;
+
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  &__artist {
+    font-size: 16px;
+    font-weight: bold;
+
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  &__default {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 325px;
+    width: 325px;
+  }
+}
+
+.mat-none {
+  background-color: transparent;
+  color: white;
+  box-shadow: none;
+}

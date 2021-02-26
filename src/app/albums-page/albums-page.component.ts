@@ -1,26 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import {GetTopAlbumsService} from '../shared/services/get-top-albums/get-top-albums.service';
-import {Observable} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 import {ActivatedRoute, Params} from '@angular/router';
+import {TopAlbumsResponse} from '../../util/interfaces';
 
 @Component({
   selector: 'app-albums-page',
   templateUrl: './albums-page.component.html',
   styleUrls: ['./albums-page.component.scss']
 })
-export class AlbumsPageComponent implements OnInit {
+export class AlbumsPageComponent implements OnInit, OnDestroy {
 
-  albums: Observable<any> | undefined;
+  albums: Observable<TopAlbumsResponse> | undefined;
   currentGenre = '';
+  paramsSubscription: Subscription | undefined;
 
   constructor(private albumsService: GetTopAlbumsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params: Params) => {
+    this.paramsSubscription = this.route.params.subscribe((params: Params) => {
       this.currentGenre = params.genre;
     });
-    this.albums = this.albumsService.getTopAlbumsByGenre('rock');
-    console.log(this.albums);
+
+    this.albums = this.albumsService.getTopAlbumsByGenre(this.currentGenre);
+  }
+
+  ngOnDestroy(): void {
+    this.paramsSubscription?.unsubscribe();
   }
 
 }
