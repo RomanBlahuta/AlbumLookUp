@@ -15,9 +15,9 @@ search albums by typing the album's name into the text field in the header.
 ## <span style="color: red !important;">IMPORTANT</span>
 
 **In order for the app to work, please insert the api 
-key string into the *api_key* field in the *environment.ts* 
-and *environment.prod.ts* files. The *api_key* field default 
-value is an epty string.**
+key string into the *api_key* field of objects in the *environment.ts* 
+and *environment.prod.ts* files in *src/environments/* folder. The *api_key* field default 
+value is an empty string.**
 
 <br/><br/>
 
