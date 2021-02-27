@@ -1,20 +1,22 @@
+@import "src/stylesheets/variables";
+
 .Header {
 
-  width: calc(100% - 40px);
-  background-color: black;
-  padding: 20px 20px;
+  width: calc(100% - #{$header-padding * 2});
+  background-color: $header-bg-color;
+  padding: $header-padding;
 
   &__backButton {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: $header-button-padding;
+    padding-right: $header-button-padding;
 
     &:hover {
-      background-color: #1A1919;
+      background-color: $header-button-bg-color-hover;
     }
   }
 
   &__albumInput {
-    width: 350px;
+    width: $header-input-width;
     margin-left: 20px;
     font-family: "Roboto Light", sans-serif;
     font-size: 16px;

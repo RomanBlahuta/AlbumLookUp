@@ -8,3 +8,6 @@ export const GENRES: Genre[] = [
   {name: 'R&B', apiName: 'rnb', color: '#F25BA5'},
   {name: 'Indie', apiName: 'indie', color: '#4E6FF5'}
 ];
+
+export const ICON_INACTIVE = 'favorite_border';
+export const ICON_ACTIVE = 'favorite';

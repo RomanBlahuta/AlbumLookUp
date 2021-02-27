@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {GenresPageComponent} from './genres-page/genres-page.component';
-import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import {AlbumsPageComponent} from './albums-page/albums-page.component';
+import { GenresPageComponent } from './genres-page/genres-page.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AlbumsPageComponent } from './albums-page/albums-page.component';
 
 const routes: Routes = [
   {path: 'genres', component: GenresPageComponent},

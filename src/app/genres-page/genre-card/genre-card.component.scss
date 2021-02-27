@@ -1,10 +1,13 @@
+@import "src/stylesheets/variables";
+
 .GenreCard {
 
   &__card {
-    width: 350px;
-    height: 200px;
-    border-radius: 12px;
-    margin-left: 30px;
+    width: $genre-card-width;
+    height: $genre-card-height;
+    border-radius: $card-border-radius;
+    margin-left: $genre-card-margin;
+    margin-bottom: $genre-card-margin;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +19,7 @@
 
   &__link {
     text-decoration: none;
-    color: white;
+    color: $text-color;
     font-weight: bold;
     font-size: 20px;
   }

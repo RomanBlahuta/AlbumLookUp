@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Genre} from '../../util/interfaces';
-import {GENRES} from '../../util/consts';
+import { Genre } from '../../util/interfaces';
+import { GENRES } from '../../util/consts';
 
 @Component({
   selector: 'app-genres-page',

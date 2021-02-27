@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, OnInit, Output, SimpleChanges, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
+import {ICON_ACTIVE} from '../../../../util/consts';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +11,7 @@ import { debounceTime } from 'rxjs/operators';
 export class HeaderComponent implements OnInit, OnChanges {
 
   albumNameControl = new FormControl('');
+  likedIcon = ICON_ACTIVE;
 
   @Input() likedCount = 0;
   @Output() albumNameInputEvent = new EventEmitter<string>();

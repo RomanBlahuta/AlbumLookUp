@@ -1,0 +1,8 @@
+@import "src/stylesheets/variables";
+
+.PageNotFound {
+  padding-top: $page-not-found-padding * 2;
+  padding-left: $page-not-found-padding;
+  font-size: $page-not-found-font-size;
+  font-weight: bold;
+}

@@ -1,12 +1,12 @@
-$album-card-size: 285px;
+@import "src/stylesheets/variables";
 
 .AlbumCard {
   height: $album-card-size;
   width: $album-card-size;
-  background-color: #212020;
-  margin-right: 24px;
-  margin-bottom: 24px;
-  border-radius: 12px;
+  background-color: $album-card-bg-color;
+  margin-right: $album-card-margin;
+  margin-bottom: $album-card-margin;
+  border-radius: $card-border-radius;
   text-align: center;
   line-height: 28px;
 
@@ -23,6 +23,7 @@ $album-card-size: 285px;
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 28px;
+    padding: 0 5px;
 
     &:hover {
       cursor: default;
@@ -32,6 +33,7 @@ $album-card-size: 285px;
   &__artist {
     font-size: 16px;
     font-weight: bold;
+    padding: 0 5px;
 
     &:hover {
       cursor: default;
@@ -42,7 +44,7 @@ $album-card-size: 285px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 12px;
+    border-radius: $card-border-radius;
     height: $album-card-size;
     width: $album-card-size;
   }
@@ -50,6 +52,6 @@ $album-card-size: 285px;
 
 .mat-none {
   background-color: transparent;
-  color: white;
+  color: $text-color;
   box-shadow: none;
 }

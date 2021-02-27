@@ -1,8 +1,8 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
-import {GetTopAlbumsService} from '../shared/services/get-top-albums/get-top-albums.service';
-import {Observable, Subscription} from 'rxjs';
-import {ActivatedRoute, Params} from '@angular/router';
-import {Album, TopAlbumsResponse} from '../../util/interfaces';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { GetTopAlbumsService } from '../shared/services/get-top-albums/get-top-albums.service';
+import { Observable, Subscription } from 'rxjs';
+import { ActivatedRoute, Params } from '@angular/router';
+import { TopAlbumsResponse } from '../../util/interfaces';
 
 @Component({
   selector: 'app-albums-page',

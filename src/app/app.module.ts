@@ -15,13 +15,14 @@ import { GenreListComponent } from './genres-page/genre-list/genre-list.componen
 import { GenreCardComponent } from './genres-page/genre-card/genre-card.component';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button';
-import {MatBadgeModule} from '@angular/material/badge';
-import {MatIconModule} from '@angular/material/icon';
-import {HttpClientModule} from '@angular/common/http';
-import {GetTopAlbumsService} from './shared/services/get-top-albums/get-top-albums.service';
-import {ReactiveFormsModule} from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
+import { GetTopAlbumsService } from './shared/services/get-top-albums/get-top-albums.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [

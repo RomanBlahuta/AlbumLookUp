@@ -1,6 +1,8 @@
+@import "src/stylesheets/variables";
+
 body {
-  background-color: #1A1919;
-  color: white;
+  background-color: $bg-color;
+  color: $text-color;
   font-family: "Roboto Light", sans-serif;
   font-size: 20px;
 }

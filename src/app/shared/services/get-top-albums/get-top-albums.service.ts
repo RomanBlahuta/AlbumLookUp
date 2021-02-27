@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {composeAlbumInfoUrl, composeGenreAlbumsRequestUrl, composeSearchRequestUrl} from '../../../../util/utils';
+import { composeGenreAlbumsRequestUrl, composeSearchRequestUrl } from '../../../../util/utils';
 import { environment } from '../../../../environments/environment';
 
 @Injectable({
@@ -17,9 +17,5 @@ export class GetTopAlbumsService {
 
   searchAlbumByName(albumName: string): Observable<any> {
     return this.http.get(composeSearchRequestUrl(albumName, environment.api_key));
-  }
-
-  getAlbumInfo(albumName: string, artist: string): Observable<any> {
-    return this.http.get(composeAlbumInfoUrl(albumName, artist, environment.api_key));
   }
 }
