@@ -8,6 +8,15 @@ export interface TopAlbumsResponse {
   albums: TopAlbums;
 }
 
+export interface SearchAlbumsResponse {
+  results: SearchResults;
+}
+
+export interface SearchResults {
+  albummatches: AlbumMatches;
+  '@attr'?: any;
+}
+
 export interface TopAlbums {
   album: Album[];
   '@attr': any;
@@ -19,7 +28,8 @@ export interface Album {
   url: string;
   artist: Artist;
   image: Image[];
-  '@attr': any;
+  '@attr'?: any;
+  streamable?: string;
 }
 
 export interface Artist {
@@ -33,3 +43,6 @@ export interface Image {
   size: 'small' | 'medium' | 'large' | 'extralarge';
 }
 
+export interface AlbumMatches {
+  album: Album[];
+}

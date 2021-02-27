@@ -1,6 +1,6 @@
-import {Component, Input, OnChanges, OnInit, Output, SimpleChanges, EventEmitter } from '@angular/core';
-import {FormControl} from '@angular/forms';
-import {debounceTime} from 'rxjs/operators';
+import { Component, Input, OnChanges, OnInit, Output, SimpleChanges, EventEmitter } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -18,11 +18,8 @@ export class HeaderComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
 
-    this.albumNameControl.valueChanges.pipe(debounceTime(1500)).subscribe((albumName) => {
-      if (albumName.length > 0) {
-        this.albumNameInputEvent.emit(albumName);
-        console.log(albumName);
-      }
+    this.albumNameControl.valueChanges.pipe(debounceTime(750)).subscribe((albumName) => {
+      this.albumNameInputEvent.emit(albumName);
     });
   }
 

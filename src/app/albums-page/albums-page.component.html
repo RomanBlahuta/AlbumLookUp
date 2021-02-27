@@ -1,2 +1,2 @@
-<app-header [likedCount]="likedCount"></app-header>
+<app-header [likedCount]="likedCount" (albumNameInputEvent)="onAlbumNameInput($event)"></app-header>
 <app-album-list [albums]="albums" (likedNumberChangeEvent)="onLikedNumberChange()"></app-album-list>

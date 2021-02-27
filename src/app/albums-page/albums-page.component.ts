@@ -33,4 +33,12 @@ export class AlbumsPageComponent implements OnInit, OnDestroy {
   onLikedNumberChange(): void {
     this.likedCount = Object.keys(localStorage).length;
   }
+
+  onAlbumNameInput(albumName: string): void {
+    if (albumName.length === 0) {
+      this.albums = this.albumsService.getTopAlbumsByGenre(this.currentGenre);
+    } else {
+      this.albums = this.albumsService.searchAlbumByName(albumName);
+    }
+  }
 }
