@@ -3,7 +3,7 @@
 
   <div class="AlbumCard__mouseOver" *ngIf="mouseOnCard">
     <p class="AlbumCard__albumName">{{albumData.name}}</p>
-    <p class="AlbumCard__artist">{{albumData.artist.name}}</p>
+    <p class="AlbumCard__artist">{{albumData.artist.name === undefined ? albumData.artist : albumData.artist.name}}</p>
     <button mat-fab color="none" (click)="onLiked()"><mat-icon>{{heartIcon}}</mat-icon></button>
   </div>
 </div>
