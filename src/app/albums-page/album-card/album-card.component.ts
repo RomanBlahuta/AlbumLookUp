@@ -1,6 +1,6 @@
 import {Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChanges} from '@angular/core';
 import {Album} from '../../../util/interfaces';
-import {ICON_ACTIVE, ICON_INACTIVE} from '../../../util/consts';
+import {DEFAULT_ALBUM_COVER, ICON_ACTIVE, ICON_INACTIVE} from '../../../util/consts';
 
 @Component({
   selector: 'app-album-card',
@@ -15,6 +15,7 @@ export class AlbumCardComponent implements OnInit, OnChanges {
   mouseOnCard = false;
   liked = false;
   heartIcon = this.liked ? ICON_ACTIVE : ICON_INACTIVE;
+  defaultAlbumCover = DEFAULT_ALBUM_COVER;
 
   constructor() { }
 

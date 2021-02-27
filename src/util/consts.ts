@@ -11,3 +11,4 @@ export const GENRES: Genre[] = [
 
 export const ICON_INACTIVE = 'favorite_border';
 export const ICON_ACTIVE = 'favorite';
+export const DEFAULT_ALBUM_COVER = '../../../assets/albumDefaultCover.jpg';
